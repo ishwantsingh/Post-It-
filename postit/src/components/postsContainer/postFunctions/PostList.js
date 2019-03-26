@@ -1,5 +1,6 @@
 import React from "react";
 import PostSummary from "./PostSummary";
+import { Link } from "react-router-dom";
 import "./PostList.css";
 
 export default function PostList(props) {
