@@ -1,5 +1,6 @@
 import React from "react";
 import PostList from "../postFunctions/PostList";
+import { connect } from "react-redux";
 
 const ProductManagerList = props => {
   function filterByType(post) {
@@ -10,8 +11,12 @@ const ProductManagerList = props => {
   }
   return (
     <div className="project-list section">
-      {props.posts && props.posts.map(post => filterByType(post))}
+      {props.post && props.post.map(post => filterByType(post))}
     </div>
   );
 };
-export default ProductManagerList;
+function mapStateToProps(state) {
+  return { post: state.post.posts };
+}
+
+export default connect(mapStateToProps)(ProductManagerList);

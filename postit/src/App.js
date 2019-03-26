@@ -21,9 +21,9 @@ class App extends Component {
       posts: ""
     };
   }
-  componentDidMount() {
-    this.setState({ posts: dummyData });
-  }
+  // componentDidMount() {
+  //   this.setState({ posts: dummyData });
+  // }
   render() {
     return (
       <Router>
@@ -34,45 +34,28 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => (
-                  <AllPostList {...props} posts={this.state.posts} />
-                )}
+                render={props => <AllPostList {...props} />}
               />
               <Route
                 path="/announcements"
-                render={props => (
-                  <AnnouncementList {...props} posts={this.state.posts} />
-                )}
+                render={props => <AnnouncementList {...props} />}
               />
               <Route
                 path="/devteam"
-                render={props => (
-                  <DevTeamList {...props} posts={this.state.posts} />
-                )}
+                render={props => <DevTeamList {...props} />}
               />
               <Route
                 path="/desteam"
-                render={props => (
-                  <DesignTeamList {...props} posts={this.state.posts} />
-                )}
+                render={props => <DesignTeamList {...props} />}
               />
               <Route
                 path="/marketing"
-                render={props => (
-                  <MarketingPostList {...props} posts={this.state.posts} />
-                )}
+                render={props => <MarketingPostList {...props} />}
               />
-              <Route
-                path="/hr"
-                render={props => (
-                  <HRPostList {...props} posts={this.state.posts} />
-                )}
-              />
+              <Route path="/hr" render={props => <HRPostList {...props} />} />
               <Route
                 path="/productmanager"
-                render={props => (
-                  <ProductManagerList {...props} posts={this.state.posts} />
-                )}
+                render={props => <ProductManagerList {...props} />}
               />
               {/* <Route path="/create" component={CreatePost} /> */}
               {/* <Route path="/user" component={User} /> */}

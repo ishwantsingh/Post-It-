@@ -1,5 +1,6 @@
 import React from "react";
 import PostList from "../postFunctions/PostList";
+import { connect } from "react-redux";
 
 const AnnouncementList = props => {
   function filterByType(post) {
@@ -11,9 +12,13 @@ const AnnouncementList = props => {
   return (
     <div className="project-list section">
       <h1>Announcements!</h1>
-      {props.posts && props.posts.map(post => filterByType(post))}
+      {props.post && props.post.map(post => filterByType(post))}
     </div>
   );
 };
 
-export default AnnouncementList;
+function mapStateToProps(state) {
+  return { post: state.post.posts };
+}
+
+export default connect(mapStateToProps)(AnnouncementList);
