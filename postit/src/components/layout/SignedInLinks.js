@@ -1,38 +1,39 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./SignedInLinks.css";
 
 function SignedInLinks() {
   return (
     <div>
-      <ul>
-        <li>
+      <div className="signed-in-nav">
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="/">All Posts</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="announcements">Announcements</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="devteam">Dev Team</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="desteam">Design Team</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="marketing">Marketing</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="hr">HR</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="productmanager">Project Managers</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="/">Create Post</NavLink>
-        </li>
-        <li>
+        </h5>
+        <h5 className="waves-effect waves-light btn">
           <NavLink to="user">User</NavLink>
-        </li>
-      </ul>
+        </h5>
+      </div>
     </div>
   );
 }

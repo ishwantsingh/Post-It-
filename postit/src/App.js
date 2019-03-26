@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import dummyData from "./dummyData/postData";
 
 import Navbar from "./components/layout/Navbar";
 import AllPostList from "./components/postsContainer/AllPostList";
@@ -14,25 +15,72 @@ import SignIn from "./components/authentication/SignIn";
 import SignUp from "./components/authentication/SignUp";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      posts: ""
+    };
+  }
+  componentDidMount() {
+    this.setState({ posts: dummyData });
+  }
   render() {
     return (
       <Router>
         <div className="App">
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={AllPostList} />
-            <Route path="/announcements" component={AnnouncementList} />
-            <Route path="/devteam" component={DevTeamList} />
-            <Route path="/desteam" component={DesignTeamList} />
-            <Route path="/marketing" component={MarketingPostList} />
-            <Route path="/hr" component={HRPostList} />
-            <Route path="/productmanager" component={ProductManagerList} />
-            {/* <Route path="/create" component={CreatePost} /> */}
-            {/* <Route path="/user" component={User} /> */}
+          <div className="data-div">
+            <Switch>
+              <Route
+                exact
+                path="/"
+                render={props => (
+                  <AllPostList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/announcements"
+                render={props => (
+                  <AnnouncementList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/devteam"
+                render={props => (
+                  <DevTeamList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/desteam"
+                render={props => (
+                  <DesignTeamList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/marketing"
+                render={props => (
+                  <MarketingPostList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/hr"
+                render={props => (
+                  <HRPostList {...props} posts={this.state.posts} />
+                )}
+              />
+              <Route
+                path="/productmanager"
+                render={props => (
+                  <ProductManagerList {...props} posts={this.state.posts} />
+                )}
+              />
+              {/* <Route path="/create" component={CreatePost} /> */}
+              {/* <Route path="/user" component={User} /> */}
 
-            <Route path="/signin" component={SignIn} />
-            <Route path="/signup" component={SignUp} />
-          </Switch>
+              <Route path="/signin" component={SignIn} />
+              <Route path="/signup" component={SignUp} />
+            </Switch>
+          </div>
         </div>
       </Router>
     );

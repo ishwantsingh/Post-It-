@@ -1,0 +1,14 @@
+.list-details {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  margin: 10px auto;
+}
+.container {
+  margin: 20px auto;
+  width: 100%;
+}
+span {
+  font-weight: bold;
+}

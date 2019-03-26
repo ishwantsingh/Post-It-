@@ -1,9 +1,16 @@
 import React from "react";
+import PostList from "../postFunctions/PostList";
 
-const DesignTeamList = () => {
+const DesignTeamList = props => {
+  function filterByType(post) {
+    if (post.type === "Design Team") {
+      return <PostList post={post} />;
+    }
+    return null;
+  }
   return (
     <div className="project-list section">
-      <h1>DesignTeam List</h1>
+      {props.posts && props.posts.map(post => filterByType(post))}
     </div>
   );
 };

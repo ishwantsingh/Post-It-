@@ -38,7 +38,7 @@ class SignUp extends Component {
             <input type="text" id="lastName" onChange={this.handleChange} />
           </div>
           <div>
-            <button>Sign Up</button>
+            <button className="waves-effect waves-light btn">Sign Up</button>
           </div>
         </form>
       </div>
