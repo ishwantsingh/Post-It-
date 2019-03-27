@@ -2,6 +2,7 @@ import React from "react";
 import PostSummary from "./PostSummary";
 import { Link } from "react-router-dom";
 import "./PostList.css";
+import moment from "moment";
 
 export default function PostList(props) {
   return (
@@ -31,6 +32,11 @@ export default function PostList(props) {
         </div>
         <div className="post-type">
           <span>{props.post.type}</span>
+        </div>
+        <div>
+          <p className="grey-text">
+            {moment(props.post.createdAt.toDate()).format("l")}
+          </p>
         </div>
       </div>
     </div>

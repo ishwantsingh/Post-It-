@@ -12,7 +12,7 @@ const createPost = post => {
         ...post,
         displayName: profile.displayName,
         avatarUrl: profile.avatarUrl,
-        authorId: 8,
+        authorId: authorId,
         createdAt: new Date()
       })
       .then(() => {
