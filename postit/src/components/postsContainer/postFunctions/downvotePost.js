@@ -1,9 +1,21 @@
-export default function upvotePost(event) {
-  const postLink = event.currentTarget.parentElement.parentElement.parentElement
-    .querySelector("a")
-    .href.split("/");
-  const currentPostId = postLink[postLink.length - 1];
-  console.log(currentPostId);
+import { connect } from "react-redux";
+import postIdGetter from "./postIdGetter";
+import { downvoteAction } from "../../../state/actionCreators/votesAction";
 
-  return currentPostId;
+function downvotePost(event) {
+  console.log("totot", postIdGetter(event));
+  return {};
 }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     downvoteAction: postId => dispatch(downvoteAction(postId))
+//   };
+// };
+
+// export default connect(
+//   null,
+//   mapDispatchToProps
+// )(downvotePost);
+
+export default downvotePost;

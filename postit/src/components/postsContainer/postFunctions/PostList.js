@@ -5,6 +5,7 @@ import "./PostList.css";
 import moment from "moment";
 import upvotePost from "./upvotePost";
 import downvotePost from "./downvotePost";
+import postIdGetter from "./postIdGetter";
 
 export default function PostList(props) {
   return (
@@ -28,10 +29,20 @@ export default function PostList(props) {
           <span>{props.post.displayName}</span>
         </div>
         <div className="votes">
-          <span onClick={event => upvotePost(event)}>
+          <span
+            onClick={event => {
+              postIdGetter(event);
+              upvotePost(event);
+            }}
+          >
             Up: {props.post.upvotes}
           </span>
-          <span onClick={event => downvotePost(event)}>
+          <span
+            onClick={event => {
+              postIdGetter(event);
+              downvotePost(event);
+            }}
+          >
             Down: {props.post.downvotes}
           </span>
         </div>
