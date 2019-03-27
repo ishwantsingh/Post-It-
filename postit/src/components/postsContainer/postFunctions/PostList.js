@@ -3,6 +3,8 @@ import PostSummary from "./PostSummary";
 import { Link } from "react-router-dom";
 import "./PostList.css";
 import moment from "moment";
+import upvotePost from "./upvotePost";
+import downvotePost from "./downvotePost";
 
 export default function PostList(props) {
   return (
@@ -26,8 +28,12 @@ export default function PostList(props) {
           <span>{props.post.displayName}</span>
         </div>
         <div className="votes">
-          <span>Up: {props.post.upvotes} </span>
-          <span> Down: {props.post.downvotes}</span>
+          <span onClick={event => upvotePost(event)}>
+            Up: {props.post.upvotes}
+          </span>
+          <span onClick={event => downvotePost(event)}>
+            Down: {props.post.downvotes}
+          </span>
         </div>
         <div className="post-type">
           <span>{props.post.type}</span>

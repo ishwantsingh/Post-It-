@@ -20,12 +20,15 @@ export const login = () => {
       });
 
     // Start a sign in process for an unauthenticated user.
-    var promise1 = new Promise(function() {});
-    var provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope("profile");
-    provider.addScope("email");
-    firebase.auth().signInWithRedirect(provider);
+    let promise1 = new Promise(() => {
+      var provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope("profile");
+      provider.addScope("email");
+      firebase.auth().signInWithRedirect(provider);
+    });
+
     promise1.then(() => {
+      console.log("promise done");
       dispatch({ type: types.AUTH_SUCCESS });
       dispatch({ type: "SPINNER_OFF" });
     });
