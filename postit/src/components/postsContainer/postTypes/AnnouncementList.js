@@ -21,8 +21,8 @@ const AnnouncementList = props => {
   else {
     return (
       <div className="container center">
-        <div class="progress">
-          <div class="indeterminate" />
+        <div className="progress">
+          <div className="indeterminate" />
         </div>
       </div>
     );

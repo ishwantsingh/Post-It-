@@ -1,3 +1,5 @@
+import * as types from "./actionTypes";
+
 export const login = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
@@ -18,7 +20,14 @@ export const login = newUser => {
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");
-    firebase.auth().signInWithRedirect(provider);
+    firebase
+      .auth()
+      .signInWithRedirect(provider)
+      .then(() => {
+        dispatch({ type: types.AUTH_SUCCESS }).catch(err => {
+          dispatch({ type: types.AUTH_FAIL, err });
+        });
+      });
   };
 };
 

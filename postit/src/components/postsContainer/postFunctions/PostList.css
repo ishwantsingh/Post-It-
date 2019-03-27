@@ -1,6 +1,7 @@
 .list-details {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 100%;
   justify-content: space-around;
   margin: 10px auto;
@@ -24,4 +25,7 @@ h1 {
 .user {
   display: flex;
   align-items: center;
+}
+.summary {
+  text-align: left;
 }

@@ -3,7 +3,6 @@ import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 export function Login(props) {
-  console.log(props.auth);
   if (props.auth.uid) return <Redirect to="/" />;
   if (!props.auth.uid) {
     return (
@@ -12,20 +11,23 @@ export function Login(props) {
         <h3>Click the Login Button to Login!</h3>
       </div>
     );
-  } else {
+  } else if (props.status.requesting || !props.authCompleted) {
     return (
       <div className="container center">
         <div class="progress">
           <div class="indeterminate" />
+          <h1>Ples wait</h1>
         </div>
       </div>
     );
   }
 }
 const mapStateToProps = state => {
-  console.log(state);
+  console.log(state.firebase.isInitializing);
   return {
-    auth: state.firebase.auth
+    authCompleted: state.auth.authCompleted,
+    auth: state.firebase.auth,
+    status: state.firestore.status
   };
 };
 export default connect(mapStateToProps)(Login);
