@@ -5,14 +5,14 @@ import { connect } from "react-redux";
 const AnnouncementList = props => {
   function filterByType(post) {
     if (post.type === "Announcement") {
-      return <PostList post={post} />;
+      return <PostList post={post} key={post.id} />;
     }
     return null;
   }
   return (
-    <div className="project-list section">
+    <div className="container">
       <h1>Announcements!</h1>
-      {props.post && props.post.map(post => filterByType(post))}
+      {props.posts && props.posts.map(post => filterByType(post))}
     </div>
   );
 };

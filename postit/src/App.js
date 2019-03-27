@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import dummyData from "./dummyData/postData";
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 import Navbar from "./components/layout/Navbar";
 import AllPostList from "./components/postsContainer/AllPostList";
@@ -13,18 +15,13 @@ import HRPostList from "./components/postsContainer/postTypes/HRPostList";
 import ProductManagerList from "./components/postsContainer/postTypes/ProductManagerList";
 import SignIn from "./components/authentication/SignIn";
 import SignUp from "./components/authentication/SignUp";
+import CreatePost from "./components/postsContainer/CreatePost";
+import PostDetails from "./components/postsContainer/postFunctions/PostDetails";
+import User from "./components/user/User";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      posts: ""
-    };
-  }
-  // componentDidMount() {
-  //   this.setState({ posts: dummyData });
-  // }
   render() {
+    const { posts, auth } = this.props;
     return (
       <Router>
         <div className="App">
@@ -34,31 +31,43 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => <AllPostList {...props} />}
+                render={props => <AllPostList {...props} posts={posts} />}
               />
               <Route
                 path="/announcements"
-                render={props => <AnnouncementList {...props} />}
+                render={props => <AnnouncementList {...props} posts={posts} />}
               />
               <Route
                 path="/devteam"
-                render={props => <DevTeamList {...props} />}
+                render={props => <DevTeamList {...props} posts={posts} />}
               />
               <Route
                 path="/desteam"
-                render={props => <DesignTeamList {...props} />}
+                render={props => <DesignTeamList {...props} posts={posts} />}
               />
               <Route
                 path="/marketing"
-                render={props => <MarketingPostList {...props} />}
+                render={props => <MarketingPostList {...props} posts={posts} />}
               />
-              <Route path="/hr" render={props => <HRPostList {...props} />} />
+              <Route
+                path="/hr"
+                render={props => <HRPostList {...props} posts={posts} />}
+              />
               <Route
                 path="/productmanager"
-                render={props => <ProductManagerList {...props} />}
+                render={props => (
+                  <ProductManagerList {...props} posts={posts} />
+                )}
               />
-              {/* <Route path="/create" component={CreatePost} /> */}
-              {/* <Route path="/user" component={User} /> */}
+              <Route path="/create" component={CreatePost} />
+              <Route
+                path="/post/:id"
+                render={props => <PostDetails {...props} posts={posts} />}
+              />
+              <Route
+                path="/user"
+                render={props => <User {...props} auth={auth} />}
+              />
 
               <Route path="/signin" component={SignIn} />
               <Route path="/signup" component={SignUp} />
@@ -70,4 +79,14 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    posts: state.firestore.ordered.posts,
+    auth: state.firebase.auth
+  };
+};
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([{ collection: "posts", orderBy: ["createdAt", "desc"] }])
+)(App);

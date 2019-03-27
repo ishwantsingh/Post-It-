@@ -3,11 +3,11 @@ import PostList from "./postFunctions/PostList";
 import "./postFunctions/PostList.css";
 import { connect } from "react-redux";
 
-const AllPostList = props => {
+const AllPostList = ({ posts }) => {
   return (
     <div className="container">
       <h1>All Posts!</h1>
-      {props.post && props.post.map(post => <PostList post={post} />)}
+      {posts && posts.map(post => <PostList post={post} key={post.id} />)}
     </div>
   );
 };

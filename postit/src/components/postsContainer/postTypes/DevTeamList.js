@@ -5,13 +5,14 @@ import PostList from "../postFunctions/PostList";
 const DevTeamList = props => {
   function filterByType(post) {
     if (post.type === "Dev Team") {
-      return <PostList post={post} />;
+      return <PostList post={post} key={post.id} />;
     }
     return null;
   }
   return (
-    <div className="project-list section">
-      {props.post && props.post.map(post => filterByType(post))}
+    <div className="container">
+      <h1>Dev Team Post!</h1>
+      {props.posts && props.posts.map(post => filterByType(post))}
     </div>
   );
 };

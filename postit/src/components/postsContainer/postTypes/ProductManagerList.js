@@ -5,13 +5,14 @@ import { connect } from "react-redux";
 const ProductManagerList = props => {
   function filterByType(post) {
     if (post.type === "Product Manager") {
-      return <PostList post={post} />;
+      return <PostList post={post} key={post.id} />;
     }
     return null;
   }
   return (
-    <div className="project-list section">
-      {props.post && props.post.map(post => filterByType(post))}
+    <div className="container">
+      <h1>Product Manager Post!</h1>
+      {props.posts && props.posts.map(post => filterByType(post))}
     </div>
   );
 };
