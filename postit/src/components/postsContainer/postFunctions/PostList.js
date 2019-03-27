@@ -18,7 +18,6 @@ export default function PostList(props) {
       </Link>
       <div className="list-details">
         <div className="user">
-          {console.log(props.post)}
           <img
             src={props.post.avatarUrl}
             alt="profile pic"

@@ -35,7 +35,7 @@ function SignedInLinks(props) {
         <h5 className="waves-effect white btn">
           <NavLink to="/user">User</NavLink>
         </h5>
-        <button onClick={props.login} className="waves-effect btn">
+        <button onClick={props.logout} className="waves-effect btn">
           LOG OUT
         </button>
       </div>

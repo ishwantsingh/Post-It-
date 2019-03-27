@@ -16,6 +16,7 @@ import ProductManagerList from "./components/postsContainer/postTypes/ProductMan
 import CreatePost from "./components/postsContainer/CreatePost";
 import PostDetails from "./components/postsContainer/postFunctions/PostDetails";
 import User from "./components/user/User";
+import Login from "./components/layout/Login";
 
 class App extends Component {
   render() {
@@ -29,32 +30,44 @@ class App extends Component {
               <Route
                 exact
                 path="/"
-                render={props => <AllPostList {...props} posts={posts} />}
+                render={props => (
+                  <AllPostList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/announcements"
-                render={props => <AnnouncementList {...props} posts={posts} />}
+                render={props => (
+                  <AnnouncementList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/devteam"
-                render={props => <DevTeamList {...props} posts={posts} />}
+                render={props => (
+                  <DevTeamList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/desteam"
-                render={props => <DesignTeamList {...props} posts={posts} />}
+                render={props => (
+                  <DesignTeamList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/marketing"
-                render={props => <MarketingPostList {...props} posts={posts} />}
+                render={props => (
+                  <MarketingPostList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/hr"
-                render={props => <HRPostList {...props} posts={posts} />}
+                render={props => (
+                  <HRPostList {...props} posts={posts} auth={auth} />
+                )}
               />
               <Route
                 path="/productmanager"
                 render={props => (
-                  <ProductManagerList {...props} posts={posts} />
+                  <ProductManagerList {...props} posts={posts} auth={auth} />
                 )}
               />
               <Route path="/create" component={CreatePost} />
@@ -66,6 +79,7 @@ class App extends Component {
                 path="/user"
                 render={props => <User {...props} auth={auth} />}
               />
+              <Route path="/login" component={Login} />
             </Switch>
           </div>
         </div>

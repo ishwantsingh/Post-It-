@@ -1,8 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import PostList from "../postFunctions/PostList";
+import { Redirect } from "react-router-dom";
 
 const MarketingPostList = props => {
+  if (!props.auth.uid) return <Redirect to="/login" />;
   function filterByType(post) {
     if (post.type === "Marketing") {
       return <PostList post={post} key={post.id} />;
