@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 
-export const login = newUser => {
+export const login = () => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();
     const firestore = getFirestore();
@@ -14,20 +14,25 @@ export const login = newUser => {
           var token = result.credential.accessToken;
         }
         var user = result.user;
+      })
+      .then(() => {
+        dispatch({ type: "SPINNER_ON" });
       });
 
     // Start a sign in process for an unauthenticated user.
+    var promise1 = new Promise(function() {});
     var provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope("profile");
     provider.addScope("email");
-    firebase
-      .auth()
-      .signInWithRedirect(provider)
-      .then(() => {
-        dispatch({ type: types.AUTH_SUCCESS }).catch(err => {
-          dispatch({ type: types.AUTH_FAIL, err });
-        });
-      });
+    firebase.auth().signInWithRedirect(provider);
+    promise1.then(() => {
+      dispatch({ type: types.AUTH_SUCCESS });
+      dispatch({ type: "SPINNER_OFF" });
+    });
+
+    //   .catch(err => {
+    //     dispatch({ type: types.AUTH_FAIL, err });
+    //   });
   };
 };
 

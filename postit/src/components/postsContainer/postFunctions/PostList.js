@@ -6,7 +6,7 @@ import moment from "moment";
 
 export default function PostList(props) {
   return (
-    <div className="card-panel hoverable">
+    <div className="card-panel hoverable list-div">
       <Link
         to={"/post/" + props.post.id}
         key={props.post.id}
@@ -26,13 +26,13 @@ export default function PostList(props) {
           <span>{props.post.displayName}</span>
         </div>
         <div className="votes">
-          <span>Upvotes:{props.post.upvotes}</span>
-          <span>Downvotes:{props.post.downvotes}</span>
+          <span>Up: {props.post.upvotes} </span>
+          <span> Down: {props.post.downvotes}</span>
         </div>
         <div className="post-type">
           <span>{props.post.type}</span>
         </div>
-        <div>
+        <div className="date">
           <p className="grey-text">
             {moment(props.post.createdAt.toDate()).format("l")}
           </p>

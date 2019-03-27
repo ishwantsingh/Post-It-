@@ -3,8 +3,11 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 10px auto;
+}
+.list-div {
+  height: 150px;
 }
 .container {
   margin: 20px auto;
@@ -23,8 +26,19 @@ h1 {
   margin: 0 8px 0 0;
 }
 .user {
+  width: 250px;
+  text-align: left;
   display: flex;
   align-items: center;
+}
+.votes {
+  flex-grow: 1;
+}
+.post-type {
+  width: 270px;
+}
+.date {
+  flex-grow: 1;
 }
 .summary {
   text-align: left;

@@ -23,7 +23,6 @@ export function Login(props) {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.firebase.isInitializing);
   return {
     authCompleted: state.auth.authCompleted,
     auth: state.firebase.auth,

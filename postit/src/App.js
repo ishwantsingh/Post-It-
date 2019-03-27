@@ -17,6 +17,7 @@ import CreatePost from "./components/postsContainer/CreatePost";
 import PostDetails from "./components/postsContainer/postFunctions/PostDetails";
 import User from "./components/user/User";
 import Login from "./components/layout/Login";
+import Spinner from "./components/layout/Spinner";
 
 class App extends Component {
   render() {
@@ -79,7 +80,15 @@ class App extends Component {
                 path="/user"
                 render={props => <User {...props} auth={auth} />}
               />
-              <Route path="/login" component={Login} />
+
+              <Route
+                path="/login"
+                render={() => (
+                  <Spinner>
+                    <Login />
+                  </Spinner>
+                )}
+              />
             </Switch>
           </div>
         </div>
