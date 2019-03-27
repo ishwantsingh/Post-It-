@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./SignedOutLinks.css";
 import { connect } from "react-redux";
 
@@ -9,14 +8,10 @@ function SignedOutLinks(props) {
   return (
     <div>
       <div className="signed-out-nav">
-        <h5 className="waves-effect white btn">
-          <NavLink to="/signup">Signup</NavLink>
-        </h5>
-        <h5 className="waves-effect white btn">
-          <NavLink to="/signin">SignIn</NavLink>
-        </h5>
         <h5>
-          <button onClick={props.login}>LOGIN</button>
+          <button onClick={props.login} className="waves-effect btn">
+            LOGIN
+          </button>
         </h5>
       </div>
     </div>

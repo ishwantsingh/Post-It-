@@ -13,8 +13,6 @@ import DesignTeamList from "./components/postsContainer/postTypes/DesignTeamList
 import MarketingPostList from "./components/postsContainer/postTypes/MarketingPostList";
 import HRPostList from "./components/postsContainer/postTypes/HRPostList";
 import ProductManagerList from "./components/postsContainer/postTypes/ProductManagerList";
-import SignIn from "./components/authentication/SignIn";
-import SignUp from "./components/authentication/SignUp";
 import CreatePost from "./components/postsContainer/CreatePost";
 import PostDetails from "./components/postsContainer/postFunctions/PostDetails";
 import User from "./components/user/User";
@@ -68,9 +66,6 @@ class App extends Component {
                 path="/user"
                 render={props => <User {...props} auth={auth} />}
               />
-
-              <Route path="/signin" component={SignIn} />
-              <Route path="/signup" component={SignUp} />
             </Switch>
           </div>
         </div>
