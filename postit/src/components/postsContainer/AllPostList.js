@@ -17,7 +17,9 @@ const AllPostList = props => {
   } else {
     return (
       <div className="container center">
-        <p>Please Wait...</p>
+        <div class="progress">
+          <div class="indeterminate" />
+        </div>
       </div>
     );
   }

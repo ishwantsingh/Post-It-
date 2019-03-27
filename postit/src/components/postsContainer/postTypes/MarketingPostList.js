@@ -11,12 +11,22 @@ const MarketingPostList = props => {
     }
     return null;
   }
-  return (
-    <div className="container">
-      <h1>Marketing Post!</h1>
-      {props.posts && props.posts.map(post => filterByType(post))}
-    </div>
-  );
+  if (props.posts)
+    return (
+      <div className="container">
+        <h1>Marketing Post!</h1>
+        {props.posts && props.posts.map(post => filterByType(post))}
+      </div>
+    );
+  else {
+    return (
+      <div className="container center">
+        <div class="progress">
+          <div class="indeterminate" />
+        </div>
+      </div>
+    );
+  }
 };
 function mapStateToProps(state) {
   return { post: state.post.posts };

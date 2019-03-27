@@ -7,7 +7,7 @@ export function Login(props) {
   if (props.auth.uid) return <Redirect to="/" />;
   if (!props.auth.uid) {
     return (
-      <div>
+      <div className="container">
         <h1>Awwww.... Not Logged In?</h1>
         <h3>Click the Login Button to Login!</h3>
       </div>
@@ -15,7 +15,9 @@ export function Login(props) {
   } else {
     return (
       <div className="container center">
-        <p>Please Wait...</p>
+        <div class="progress">
+          <div class="indeterminate" />
+        </div>
       </div>
     );
   }
