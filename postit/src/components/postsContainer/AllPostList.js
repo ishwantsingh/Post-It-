@@ -11,7 +11,9 @@ const AllPostList = props => {
       <div className="container">
         <h1>All Posts!</h1>
         {props.posts &&
-          props.posts.map(post => <PostList post={post} key={post.id} />)}
+          props.posts.map(post => {
+            return <PostList post={post} key={post.id} />;
+          })}
       </div>
     );
   } else {

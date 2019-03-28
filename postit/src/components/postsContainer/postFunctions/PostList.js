@@ -3,11 +3,14 @@ import PostSummary from "./PostSummary";
 import { Link } from "react-router-dom";
 import "./PostList.css";
 import moment from "moment";
-import upvotePost from "./upvotePost";
+import { connect } from "react-redux";
+
+import { upvotePost } from "./upvotePost";
 import downvotePost from "./downvotePost";
 import postIdGetter from "./postIdGetter";
+import getPostId from "../../../state/actionCreators/getPostId";
 
-export default function PostList(props) {
+const PostList = props => {
   return (
     <div className="card-panel hoverable list-div">
       <Link
@@ -31,11 +34,11 @@ export default function PostList(props) {
         <div className="votes">
           <span
             onClick={event => {
-              postIdGetter(event);
-              upvotePost(event);
+              props.getPostId(event);
             }}
           >
-            Up: {props.post.upvotes}
+            <button onClick={() => upvotePost(props.post)}> Up: </button>{" "}
+            {props.post.upvotes}
           </span>
           <span
             onClick={event => {
@@ -57,4 +60,13 @@ export default function PostList(props) {
       </div>
     </div>
   );
+};
+
+function mapDispatchToProps(dispatch) {
+  return { getPostId: event => dispatch(getPostId(event)) };
 }
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(PostList);

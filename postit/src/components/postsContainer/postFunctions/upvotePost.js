@@ -1,21 +1,49 @@
-import { connect } from "react-redux";
-import postIdGetter from "./postIdGetter";
+// import React from "react";
+// import { connect } from "react-redux";
+// // import postIdGetter from "./postIdGetter";
 import { upvoteAction } from "../../../state/actionCreators/votesAction";
 
-function upvotePost(event) {
-  console.log("totot", postIdGetter(event));
-  return {};
-  // return props.upwnvoteAction(postIdGetter(event));
-}
+// // function postId(event) {
+// //   const postId = postIdGetter(event);
+// //   return postId;
+// // }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     upvoteAction: postId => dispatch(upvoteAction(postId))
-//   };
+// function UpvotePost() {
+//   //   const postId = postIdGetter();
+//   console.log("totot");
+//   //return {};
+//   //return props.upvoteAction();
+// }
+
+// const mapStateToProps = state => {
+//   console.log(state);
+//   //  return { postId: state.postId };
 // };
+// // const mapDispatchToProps = dispatch => {
+// //   return {
+// //     upvoteAction: id => dispatch(upvoteAction(id))
+// //   };
+// // };
 
 // export default connect(
-//   null,
-//   mapDispatchToProps
-// )(upvotePost);
-export default upvotePost;
+//   mapStateToProps,
+//   null
+// )(UpvotePost);
+
+// //export default upvotePost;
+
+import React from "react";
+import { connect } from "react-redux";
+
+export const upvotePost = props => {
+  console.log(props);
+  return () => props.upvoteAction(props.id);
+};
+
+// function mapDispatchToProps(dispatch) {
+//   return { upvoteAction };
+// }
+connect(
+  null,
+  { upvoteAction }
+)(upvotePost);
