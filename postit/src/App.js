@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
+import Headbar from "./components/layout/Headbar";
 import Navbar from "./components/layout/Navbar";
 import AllPostList from "./components/postsContainer/AllPostList";
 import AnnouncementList from "./components/postsContainer/postTypes/AnnouncementList";
@@ -25,71 +26,76 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Navbar />
-          <div className="data-div">
-            <Switch>
-              <Route
-                exact
-                path="/"
-                render={props => (
-                  <AllPostList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/announcements"
-                render={props => (
-                  <AnnouncementList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/devteam"
-                render={props => (
-                  <DevTeamList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/desteam"
-                render={props => (
-                  <DesignTeamList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/marketing"
-                render={props => (
-                  <MarketingPostList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/hr"
-                render={props => (
-                  <HRPostList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route
-                path="/productmanager"
-                render={props => (
-                  <ProductManagerList {...props} posts={posts} auth={auth} />
-                )}
-              />
-              <Route path="/create" component={CreatePost} />
-              <Route
-                path="/post/:id"
-                render={props => <PostDetails {...props} posts={posts} />}
-              />
-              <Route
-                path="/user"
-                render={props => <User {...props} auth={auth} />}
-              />
+          <div className="headbar">
+            <Headbar />
+          </div>
+          <div className="app-data">
+            <Navbar />
+            <div className="data-div">
+              <Switch>
+                <Route
+                  exact
+                  path="/"
+                  render={props => (
+                    <AllPostList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/announcements"
+                  render={props => (
+                    <AnnouncementList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/devteam"
+                  render={props => (
+                    <DevTeamList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/desteam"
+                  render={props => (
+                    <DesignTeamList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/marketing"
+                  render={props => (
+                    <MarketingPostList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/hr"
+                  render={props => (
+                    <HRPostList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route
+                  path="/productmanager"
+                  render={props => (
+                    <ProductManagerList {...props} posts={posts} auth={auth} />
+                  )}
+                />
+                <Route path="/create" component={CreatePost} />
+                <Route
+                  path="/post/:id"
+                  render={props => <PostDetails {...props} posts={posts} />}
+                />
+                <Route
+                  path="/user"
+                  render={props => <User {...props} auth={auth} />}
+                />
 
-              <Route
-                path="/login"
-                render={() => (
-                  <Spinner>
-                    <Login />
-                  </Spinner>
-                )}
-              />
-            </Switch>
+                <Route
+                  path="/login"
+                  render={() => (
+                    <Spinner>
+                      <Login />
+                    </Spinner>
+                  )}
+                />
+              </Switch>
+            </div>
           </div>
         </div>
       </Router>

@@ -1,10 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./SignedInLinks.css";
-import { logout } from "../../state/actionCreators/authAction";
-import { connect } from "react-redux";
 
-function SignedInLinks(props) {
+function SignedInLinks() {
   return (
     <div>
       <div className="signed-in-nav">
@@ -27,7 +25,7 @@ function SignedInLinks(props) {
           <NavLink to="/hr">HR</NavLink>
         </h5>
         <h5 className="waves-effect white btn">
-          <NavLink to="/productmanager">Project Managers</NavLink>
+          <NavLink to="/productmanager">Product Managers</NavLink>
         </h5>
         <h5 className="waves-effect white btn">
           <NavLink to="/create">Create Post</NavLink>
@@ -35,20 +33,9 @@ function SignedInLinks(props) {
         <h5 className="waves-effect white btn">
           <NavLink to="/user">User</NavLink>
         </h5>
-        <button onClick={props.logout} className="waves-effect btn">
-          LOG OUT
-        </button>
       </div>
     </div>
   );
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logout: () => dispatch(logout())
-  };
-};
-export default connect(
-  null,
-  mapDispatchToProps
-)(SignedInLinks);
+export default SignedInLinks;
