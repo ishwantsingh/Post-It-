@@ -32,8 +32,14 @@ h1 {
   display: flex;
   align-items: center;
 }
-.votes {
+.votes-container {
+  display: flex;
+  flex-direction: row;
   flex-grow: 1;
+}
+.votes-div {
+  display: flex;
+  flex-direction: row;
 }
 .post-type {
   width: 270px;
@@ -43,4 +49,8 @@ h1 {
 }
 .summary {
   text-align: left;
+}
+.vote-button {
+  display: flex;
+  flex-direction: row;
 }

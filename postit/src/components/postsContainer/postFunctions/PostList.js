@@ -7,17 +7,10 @@ import { connect } from "react-redux";
 
 import { upvoteAction } from "../../../state/actionCreators/votesAction";
 import { downvoteAction } from "../../../state/actionCreators/votesAction";
+import UpvotePost from "./upvotePost";
+import DownvotePost from "./downvotePost";
 
 const PostList = props => {
-  const handleSubmitUpvote = e => {
-    //  console.log("submitUpvote props =>", props);
-    props.upvoteAction(props.post.id);
-  };
-  const handleSubmitDownvote = event => {
-    console.log(event);
-    //  console.log("submitDOwnvote props =>", props);
-    props.downvoteAction(props.post.id);
-  };
   return (
     <div className="card-panel hoverable list-div">
       <Link
@@ -38,19 +31,15 @@ const PostList = props => {
           />
           <span>{props.post.displayName}</span>
         </div>
-        <div className="votes">
-          <span>
-            <form onSubmit={handleSubmitUpvote()}>
-              <button> Up: </button>{" "}
-            </form>
-            {props.post.upvotes}
-          </span>
-          <span>
-            <form onSubmit={handleSubmitDownvote()}>
-              <button> Down: </button>{" "}
-            </form>
+        <div className="votes-container">
+          <div className="votes-div">
+            <UpvotePost postId={props.post.id} />
+            <div>{props.post.upvotes}</div>
+          </div>
+          <div className="votes-div">
+            <DownvotePost postId={props.post.id} />
             {props.post.downvotes}
-          </span>
+          </div>
         </div>
         <div className="post-type">
           <span>{props.post.type}</span>
