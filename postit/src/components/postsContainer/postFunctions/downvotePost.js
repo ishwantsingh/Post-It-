@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import "./PostList.css";
 import { downvoteAction } from "../../../state/actionCreators/votesAction";
 import { unDownvoteAction } from "../../../state/actionCreators/votesAction";
+import upvoteimgGrey from "../../../images/arrow-down-1.svg";
+import upvoteimgBlack from "../../../images/arrow-down-2.svg";
+
+const StyledImg = styled.img`
+  height: 50px;
+  width: 50px;
+`;
 
 class DownvotePost extends Component {
   constructor(props) {
@@ -31,8 +39,12 @@ class DownvotePost extends Component {
   render() {
     return (
       <div className="vote-button">
-        <form className="white" onSubmit={this.handleSubmitDownvote}>
-          <button>Down :</button>
+        <form className="white">
+          <StyledImg
+            src={this.state.clicked ? upvoteimgBlack : upvoteimgGrey}
+            alt="upvote"
+            onClick={this.handleSubmitDownvote}
+          />
         </form>
       </div>
     );

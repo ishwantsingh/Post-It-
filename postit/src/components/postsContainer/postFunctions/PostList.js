@@ -34,11 +34,11 @@ const PostList = props => {
         <div className="votes-container">
           <div className="votes-div">
             <UpvotePost postId={props.post.id} />
-            <div>{props.post.upvotes}</div>
+            <div className="number">{props.post.upvotes}</div>
           </div>
           <div className="votes-div">
             <DownvotePost postId={props.post.id} />
-            {props.post.downvotes}
+            <div className="number">{props.post.downvotes}</div>
           </div>
         </div>
         <div className="post-type">

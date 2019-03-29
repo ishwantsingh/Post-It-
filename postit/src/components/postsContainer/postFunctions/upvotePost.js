@@ -1,9 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import "./PostList.css";
 import { upvoteAction } from "../../../state/actionCreators/votesAction";
 import { unUpvoteAction } from "../../../state/actionCreators/votesAction";
+import upvoteimgGrey from "../../../images/arrow-down-1.svg";
+import upvoteimgBlack from "../../../images/arrow-down-2.svg";
+
+const StyledImg = styled.img`
+  height: 50px;
+  width: 50px;
+  transform: rotate(180deg);
+`;
 
 class UpvotePost extends Component {
   constructor(props) {
@@ -31,8 +40,12 @@ class UpvotePost extends Component {
   render() {
     return (
       <div className="vote-button">
-        <form className="white" onSubmit={this.handleSubmitUpvote}>
-          <button>Up :</button>
+        <form className="white">
+          <StyledImg
+            src={this.state.clicked ? upvoteimgBlack : upvoteimgGrey}
+            alt="upvote"
+            onClick={this.handleSubmitUpvote}
+          />
         </form>
       </div>
     );

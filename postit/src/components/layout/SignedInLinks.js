@@ -30,9 +30,6 @@ function SignedInLinks() {
         <h5 className="waves-effect white btn">
           <NavLink to="/create">Create Post</NavLink>
         </h5>
-        <h5 className="waves-effect white btn">
-          <NavLink to="/user">User</NavLink>
-        </h5>
       </div>
     </div>
   );

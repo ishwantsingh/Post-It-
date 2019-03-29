@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" style="width: 100%; height: 100%;"><desc>Made with illustrio</desc>
+  
+<g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="main-fill">
+    
+    <polygon fill="none" points="0 12 8 12 8 0 16 0 16 12 24 12 12 24" transform="translate(23 23)" stroke="none" class="main-fill"></polygon>
+  </g></g><style>
+          .main-fill {fill: #bfbcb9;}
+          .main-stroke {stroke: #bfbcb9;}
+          .secondary-fill {fill: #ffffff;}
+          .secondary-stroke {stroke: #ffffff;}
+
+          .main-fill--darken {fill: #9a9691;}
+          .main-stroke--darken {stroke: #9a9691;}
+          .secondary-fill--darken {fill: #d9d9d9;}
+          .secondary-stroke--darken {stroke: #d9d9d9;}
+
+          .main-fill--darkener {fill: #827c77;}
+          .main-stroke--darkener {stroke: #827c77;}
+          .secondary-fill--darkener {fill: #bfbfbf;}
+          .secondary-stroke--darkener {stroke: #bfbfbf;}
+        </style></svg>

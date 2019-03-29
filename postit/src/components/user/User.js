@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Redirect } from "react-router-dom";
 
 const StyledImg = styled.img`
   border-radius: 50%;
 `;
 
 function User(props) {
-  console.log(props.auth);
+  if (!props.auth.uid) return <Redirect to="/login" />;
   return (
     <div>
       <h3>{props.auth.displayName}</h3>

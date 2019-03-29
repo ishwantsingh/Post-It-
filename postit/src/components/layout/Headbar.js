@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import SignedOutLinks from "./SignedOutLinks";
 import SignedInHeadbarLinks from "./SignedInHeadbarLinks";
+
+const StyledDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  a {
+    margin-top: 20px;
+  }
+`;
 
 const Headbar = props => {
   const { auth } = props;
@@ -14,10 +22,10 @@ const Headbar = props => {
     <SignedOutLinks />
   );
   return (
-    <div className="head-bar">
-      <Link to="/">Post-it</Link>
+    <StyledDiv>
+      <Link to="/">POST IT!</Link>
       {links}
-    </div>
+    </StyledDiv>
   );
 };
 
