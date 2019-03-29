@@ -5,12 +5,19 @@ import "./PostList.css";
 import moment from "moment";
 import { connect } from "react-redux";
 
-import { upvotePost } from "./upvotePost";
-import downvotePost from "./downvotePost";
-import postIdGetter from "./postIdGetter";
-import getPostId from "../../../state/actionCreators/getPostId";
+import { upvoteAction } from "../../../state/actionCreators/votesAction";
+import { downvoteAction } from "../../../state/actionCreators/votesAction";
 
 const PostList = props => {
+  const handleSubmitUpvote = e => {
+    //  console.log("submitUpvote props =>", props);
+    props.upvoteAction(props.post.id);
+  };
+  const handleSubmitDownvote = event => {
+    console.log(event);
+    //  console.log("submitDOwnvote props =>", props);
+    props.downvoteAction(props.post.id);
+  };
   return (
     <div className="card-panel hoverable list-div">
       <Link
@@ -32,21 +39,17 @@ const PostList = props => {
           <span>{props.post.displayName}</span>
         </div>
         <div className="votes">
-          <span
-            onClick={event => {
-              props.getPostId(event);
-            }}
-          >
-            <button onClick={() => upvotePost(props.post)}> Up: </button>{" "}
+          <span>
+            <form onSubmit={handleSubmitUpvote()}>
+              <button> Up: </button>{" "}
+            </form>
             {props.post.upvotes}
           </span>
-          <span
-            onClick={event => {
-              postIdGetter(event);
-              downvotePost(event);
-            }}
-          >
-            Down: {props.post.downvotes}
+          <span>
+            <form onSubmit={handleSubmitDownvote()}>
+              <button> Down: </button>{" "}
+            </form>
+            {props.post.downvotes}
           </span>
         </div>
         <div className="post-type">
@@ -62,9 +65,12 @@ const PostList = props => {
   );
 };
 
-function mapDispatchToProps(dispatch) {
-  return { getPostId: event => dispatch(getPostId(event)) };
-}
+const mapDispatchToProps = dispatch => {
+  return {
+    upvoteAction: postId => dispatch(upvoteAction(postId)),
+    downvoteAction: postId => dispatch(downvoteAction(postId))
+  };
+};
 
 export default connect(
   null,

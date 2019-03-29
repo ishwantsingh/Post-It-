@@ -1,11 +1,9 @@
 import { connect } from "react-redux";
-import postIdGetter from "./postIdGetter";
 import { downvoteAction } from "../../../state/actionCreators/votesAction";
 
-function downvotePost(props, event) {
-  console.log("totot", postIdGetter(event));
-  //  return {};
-  return props.downvoteAction(postIdGetter(event));
+export function downvotePost(props) {
+  console.log("downvote props =>", props);
+  return downvoteAction(props.id);
 }
 
 const mapDispatchToProps = dispatch => {
@@ -14,7 +12,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+connect(
   null,
   mapDispatchToProps
 )(downvotePost);

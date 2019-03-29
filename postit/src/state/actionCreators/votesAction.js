@@ -34,14 +34,14 @@
 export const upvoteAction = postId => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
-    console.log(getState().firebase);
+    //   console.log(getState().firebase);
     const profile = getState().firebase.profile;
     const authorId = getState().firebase.auth.uid;
     firestore
       .collection("posts")
-      .doc({ postId })
+      .doc(postId)
       .update({
-        upvotes: 1
+        upvotes: 9
       })
       .then(() => {
         dispatch({ type: "UPD_POST", postId });
@@ -54,8 +54,10 @@ export const upvoteAction = postId => {
 
 export const downvoteAction = postId => {
   return (dispatch, getState, { getFirestore }) => {
-    // make async call to database
     const firestore = getFirestore();
+    console.log("lmao");
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     firestore
       .collection("posts")
       .doc(postId)

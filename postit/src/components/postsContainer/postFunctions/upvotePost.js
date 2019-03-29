@@ -36,8 +36,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 export const upvotePost = props => {
-  console.log(props);
-  return () => props.upvoteAction(props.id);
+  console.log("UPvote props =>", props);
+  return props => props.upvoteAction(props.id);
 };
 
 // function mapDispatchToProps(dispatch) {
