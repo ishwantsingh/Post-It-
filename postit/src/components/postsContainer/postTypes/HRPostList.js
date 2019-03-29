@@ -2,7 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import PostList from "../postFunctions/PostList";
 import { Redirect } from "react-router-dom";
+import styled from "styled-components";
 
+const StyledContainer = styled.div`
+  width: 100%;
+`;
 const HRPostList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;
   function filterByType(post) {
@@ -13,10 +17,10 @@ const HRPostList = props => {
   }
   if (props.posts)
     return (
-      <div className="container">
+      <StyledContainer>
         <h1>HR Post!</h1>
         {props.posts && props.posts.map(post => filterByType(post))}
-      </div>
+      </StyledContainer>
     );
   else {
     return (

@@ -1,16 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
+import styled from "styled-components";
 
 import SignedInLinks from "./SignedInLinks";
-import "./Navbar.css";
+
+const StyledNavbar = styled.div`
+  width: 15%;
+  margin: 0 5% 0 0;
+`;
 
 const Navbar = props => {
   const { auth } = props;
   const links = auth.uid ? <SignedInLinks /> : null;
   return (
-    <div className="nav-bar">
+    <StyledNavbar>
       <div>{links}</div>
-    </div>
+    </StyledNavbar>
   );
 };
 

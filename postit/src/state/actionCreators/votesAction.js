@@ -34,7 +34,7 @@
 export const upvoteAction = postId => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
-    console.log(getState().firestore.data.posts[postId].upvotes);
+    console.log("balle balle", getState().firestore.data.posts[postId].upvotes);
     const postUpvotes = getState().firestore.data.posts[postId].upvotes;
     firestore
       .collection("posts")

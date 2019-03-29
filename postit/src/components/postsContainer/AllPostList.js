@@ -1,28 +1,32 @@
 import React from "react";
 import PostList from "./postFunctions/PostList";
-import "./postFunctions/PostList.css";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  width: 100%;
+`;
 
 const AllPostList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;
   if (props.posts) {
     return (
-      <div className="container">
+      <StyledContainer>
         <h1>All Posts!</h1>
         {props.posts &&
           props.posts.map(post => {
             return <PostList post={post} key={post.id} />;
           })}
-      </div>
+      </StyledContainer>
     );
   } else {
     return (
-      <div className="container center">
+      <StyledContainer className="container center">
         <div className="progress">
           <div className="indeterminate" />
         </div>
-      </div>
+      </StyledContainer>
     );
   }
 };

@@ -3,12 +3,24 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import moment from "moment";
+import styled from "styled-components";
+
+const StyledProfileImg = styled.img`
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin: 0 8px 0 0;
+`;
+
+const StyledContainer = styled.div`
+  width: 100%;
+`;
 
 const PostDetails = props => {
   const { post } = props;
   if (post) {
     return (
-      <div className="container section post-details">
+      <StyledContainer className="section post-details">
         <div className="card z-depth-0">
           <div className="card-content">
             <span className="card-title">{post.type}</span>
@@ -16,11 +28,7 @@ const PostDetails = props => {
           </div>
           <div className="card-action grey lighten-4 grey-text details-div">
             <div className="user">
-              <img
-                src={props.post.avatarUrl}
-                alt="profile pic"
-                className="list-profile-img"
-              />
+              <StyledProfileImg src={props.post.avatarUrl} alt="profile pic" />
               <span>{props.post.displayName}</span>
             </div>
             <div>
@@ -30,7 +38,7 @@ const PostDetails = props => {
             <div>{moment(post.createdAt.toDate()).calendar()}</div>
           </div>
         </div>
-      </div>
+      </StyledContainer>
     );
   } else if (post === null) {
     return (

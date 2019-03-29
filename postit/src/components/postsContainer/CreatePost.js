@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import createPost from "../../state/actionCreators/postAction";
+import styled from "styled-components";
 
+const StyledContainer = styled.div`
+  width: 100%;
+`;
 class CreatePost extends Component {
   state = {
     type: "",
@@ -22,7 +26,7 @@ class CreatePost extends Component {
   };
   render() {
     return (
-      <div className="container">
+      <StyledContainer>
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Create a New Post</h5>
           <div className="input-field">
@@ -41,7 +45,7 @@ class CreatePost extends Component {
             <button className="btn pink lighten-1">Create</button>
           </div>
         </form>
-      </div>
+      </StyledContainer>
     );
   }
 }

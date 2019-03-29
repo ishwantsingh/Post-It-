@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
@@ -21,18 +20,38 @@ import User from "./components/user/User";
 import Login from "./components/layout/Login";
 import Spinner from "./components/layout/Spinner";
 
+const StyledAppDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`;
+
+const StyledAppDataContainer = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 1% 5%;
+`;
+const StyledAppDataDiv = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
 class App extends Component {
   render() {
     const { posts, auth } = this.props;
     return (
       <Router>
-        <div className="App">
+        <StyledAppDiv>
           <div className="headbar">
             <Headbar auth={auth} />
           </div>
-          <div className="app-data">
+          <StyledAppDataContainer>
             <Navbar />
-            <div className="data-div">
+            <StyledAppDataDiv>
               <Switch>
                 <Route
                   exact
@@ -96,9 +115,9 @@ class App extends Component {
                   )}
                 />
               </Switch>
-            </div>
-          </div>
-        </div>
+            </StyledAppDataDiv>
+          </StyledAppDataContainer>
+        </StyledAppDiv>
       </Router>
     );
   }

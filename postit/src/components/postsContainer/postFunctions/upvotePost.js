@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import "./PostList.css";
 import { upvoteAction } from "../../../state/actionCreators/votesAction";
 import { unUpvoteAction } from "../../../state/actionCreators/votesAction";
 import upvoteimgGrey from "../../../images/arrow-down-1.svg";
@@ -13,6 +12,10 @@ const StyledImg = styled.img`
   width: 50px;
   transform: rotate(180deg);
 `;
+const StyledVoteDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 class UpvotePost extends Component {
   constructor(props) {
@@ -21,12 +24,12 @@ class UpvotePost extends Component {
       postId: props.postId,
       clicked: false
     };
-    console.log(props);
+    //  console.log(props);
   }
 
   handleSubmitUpvote = e => {
     e.preventDefault();
-    console.log("submitUpvote props =>", this.state.postId);
+    //  console.log("submitUpvote props =>", this.state.postId);
     if (!this.state.clicked) {
       this.setState({ clicked: true });
       this.props.upvoteAction(this.state.postId);
@@ -39,7 +42,7 @@ class UpvotePost extends Component {
   };
   render() {
     return (
-      <div className="vote-button">
+      <StyledVoteDiv>
         <form className="white">
           <StyledImg
             src={this.state.clicked ? upvoteimgBlack : upvoteimgGrey}
@@ -47,7 +50,7 @@ class UpvotePost extends Component {
             onClick={this.handleSubmitUpvote}
           />
         </form>
-      </div>
+      </StyledVoteDiv>
     );
   }
 }

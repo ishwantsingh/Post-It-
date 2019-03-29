@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import "./PostList.css";
 import { downvoteAction } from "../../../state/actionCreators/votesAction";
 import { unDownvoteAction } from "../../../state/actionCreators/votesAction";
 import upvoteimgGrey from "../../../images/arrow-down-1.svg";
@@ -20,12 +19,12 @@ class DownvotePost extends Component {
       postId: props.postId,
       clicked: false
     };
-    console.log(props);
+    // console.log(props);
   }
 
   handleSubmitDownvote = e => {
     e.preventDefault();
-    console.log("submitDownvote props =>", this.state.postId);
+    //  console.log("submitDownvote props =>", this.state.postId);
     if (!this.state.clicked) {
       this.setState({ clicked: true });
       this.props.downvoteAction(this.state.postId);
