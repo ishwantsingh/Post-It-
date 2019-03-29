@@ -31,7 +31,7 @@ const StyledAppDataContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 1% 5%;
+  margin: 0 5% 0 3%;
 `;
 const StyledAppDataDiv = styled.div`
   width: 100%;

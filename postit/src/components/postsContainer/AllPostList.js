@@ -6,6 +6,9 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   width: 100%;
+  h1 {
+    margin: 0 auto;
+  }
 `;
 
 const AllPostList = props => {
@@ -13,7 +16,7 @@ const AllPostList = props => {
   if (props.posts) {
     return (
       <StyledContainer>
-        <h1>All Posts!</h1>
+        <h1>All Posts</h1>
         {props.posts &&
           props.posts.map(post => {
             return <PostList post={post} key={post.id} />;
