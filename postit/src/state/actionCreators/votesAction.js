@@ -51,6 +51,26 @@ export const upvoteAction = postId => {
   };
 };
 
+export const unUpvoteAction = postId => {
+  return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore();
+    console.log(getState().firestore.data.posts[postId].upvotes);
+    const postUpvotes = getState().firestore.data.posts[postId].upvotes;
+    firestore
+      .collection("posts")
+      .doc(postId)
+      .update({
+        upvotes: postUpvotes - 1
+      })
+      .then(() => {
+        dispatch({ type: "UPD_POST", postId });
+      })
+      .catch(err => {
+        dispatch({ type: "ERR_UPD" }, err);
+      });
+  };
+};
+
 export const downvoteAction = postId => {
   return (dispatch, getState, { getFirestore }) => {
     const firestore = getFirestore();
@@ -61,6 +81,26 @@ export const downvoteAction = postId => {
       .doc(postId)
       .update({
         downvotes: postDownvotes + 1
+      })
+      .then(() => {
+        dispatch({ type: "DOWNVOTE_POST_SUCCESS" });
+      })
+      .catch(err => {
+        dispatch({ type: "DOWNVOTE_POST_ERROR" }, err);
+      });
+  };
+};
+
+export const unDownvoteAction = postId => {
+  return (dispatch, getState, { getFirestore }) => {
+    const firestore = getFirestore();
+    console.log("lmao");
+    const postDownvotes = getState().firestore.data.posts[postId].downvotes;
+    firestore
+      .collection("posts")
+      .doc(postId)
+      .update({
+        downvotes: postDownvotes - 1
       })
       .then(() => {
         dispatch({ type: "DOWNVOTE_POST_SUCCESS" });

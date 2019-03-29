@@ -3,12 +3,14 @@ import { connect } from "react-redux";
 
 import "./PostList.css";
 import { upvoteAction } from "../../../state/actionCreators/votesAction";
+import { unUpvoteAction } from "../../../state/actionCreators/votesAction";
 
 class UpvotePost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postId: props.postId
+      postId: props.postId,
+      clicked: false
     };
     console.log(props);
   }
@@ -16,7 +18,15 @@ class UpvotePost extends Component {
   handleSubmitUpvote = e => {
     e.preventDefault();
     console.log("submitUpvote props =>", this.state.postId);
-    this.props.upvoteAction(this.state.postId);
+    if (!this.state.clicked) {
+      this.setState({ clicked: true });
+      this.props.upvoteAction(this.state.postId);
+    } else if (this.state.clicked) {
+      this.setState({
+        clicked: false
+      });
+      this.props.unUpvoteAction(this.state.postId);
+    }
   };
   render() {
     return (
@@ -31,7 +41,8 @@ class UpvotePost extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    upvoteAction: postId => dispatch(upvoteAction(postId))
+    upvoteAction: postId => dispatch(upvoteAction(postId)),
+    unUpvoteAction: postId => dispatch(unUpvoteAction(postId))
   };
 };
 
