@@ -4,11 +4,15 @@ import "./Navbar.css";
 import { connect } from "react-redux";
 
 import SignedOutLinks from "./SignedOutLinks";
-import Logout from "./Logout";
+import SignedInHeadbarLinks from "./SignedInHeadbarLinks";
 
 const Headbar = props => {
   const { auth } = props;
-  const links = auth.uid ? <Logout /> : <SignedOutLinks />;
+  const links = auth.uid ? (
+    <SignedInHeadbarLinks auth={props.auth} />
+  ) : (
+    <SignedOutLinks />
+  );
   return (
     <div className="head-bar">
       <Link to="/">Post-it</Link>

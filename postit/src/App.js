@@ -4,6 +4,7 @@ import "./App.css";
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import styled from "styled-components";
 
 import Headbar from "./components/layout/Headbar";
 import Navbar from "./components/layout/Navbar";
@@ -27,7 +28,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <div className="headbar">
-            <Headbar />
+            <Headbar auth={auth} />
           </div>
           <div className="app-data">
             <Navbar />

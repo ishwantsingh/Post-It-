@@ -8,9 +8,9 @@ const Navbar = props => {
   const { auth } = props;
   const links = auth.uid ? <SignedInLinks /> : null;
   return (
-    <nav className="nav-bar">
+    <div className="nav-bar">
       <div>{links}</div>
-    </nav>
+    </div>
   );
 };
 
