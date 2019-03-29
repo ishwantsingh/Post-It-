@@ -6,6 +6,9 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   width: 100%;
+  h1 {
+    margin: 0 auto;
+  }
 `;
 const HRPostList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;

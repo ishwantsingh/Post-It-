@@ -10,7 +10,7 @@ const StyledHeadDiv = styled.div`
   align-items: center;
   width: 30rem;
   justify-content: flex-end;
-  margin: 20px 50px 0 0;
+  margin: 20px 100px 0 0;
   a {
     margin-top: 0 !important;
   }
