@@ -14,8 +14,8 @@ const StyledContainer = styled.div`
 const AllPostList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;
   function compare(a, b) {
-    if (a.upvotes > b.upvotes) return -1;
-    if (a.upvotes < b.upvotes) return 1;
+    if (a.upvotes - a.downvotes > b.upvotes - b.downvotes) return -1;
+    if (a.upvotes - a.downvotes < b.upvotes - b.downvotes) return 1;
     return 0;
   }
   function myFunction2(posts) {
@@ -32,10 +32,7 @@ const AllPostList = props => {
     return (
       <StyledContainer>
         <h1>All Posts</h1>
-        {/* {props.posts &&
-          props.posts.map(post => {
-            return <PostList post={post} key={post.id} />;
-          })} */}
+        {/* renders all posts ordered by most number of upvotes and changes occur instantaneously */}
         {myFunction2(props.posts)}
       </StyledContainer>
     );

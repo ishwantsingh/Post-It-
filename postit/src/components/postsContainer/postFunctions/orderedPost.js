@@ -1,7 +1,7 @@
 export default function orderedPost(posts, filterByType) {
   function compare(a, b) {
-    if (a.upvotes > b.upvotes) return -1;
-    if (a.upvotes < b.upvotes) return 1;
+    if (a.upvotes - a.downvotes > b.upvotes - b.downvotes) return -1;
+    if (a.upvotes - a.downvotes < b.upvotes - b.downvotes) return 1;
     return 0;
   }
   var func = x => {
