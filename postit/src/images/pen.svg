@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" style="width: 100%; height: 100%;"><desc>Made with illustrio</desc>
+  
+<g class="shadow"><g fill="none" fill-rule="evenodd" stroke="none">
+    
+    
+  </g><g fill="none" transform="translate(18.025 18.025)" stroke="none">
+      <polygon points="0 33.902 12.217 29.835 4.072 21.707" fill="none" stroke="none"></polygon>
+      <polygon points="25.757 0 23.042 2.711 31.187 10.839 33.902 8.128" fill="none" stroke="none"></polygon>
+      <polygon points="19.754 6.006 19.241 5.494 20.645 4.091 19.293 2.738 10.507 11.525 11.859 12.877 18.242 6.492 18.753 7.004 5.393 20.316 13.54 28.445 29.83 12.189 21.694 4.072" fill="none" stroke="none"></polygon>
+    </g></g><g class="clone"><g fill="none" fill-rule="evenodd" stroke="none" style="stroke-width: 2;" class="main-fill main-stroke">
+    
+    
+  </g><g fill="none" transform="translate(18.025 18.025)" stroke="none" style="stroke-width: 2;" class="main-fill main-stroke">
+      <polygon points="0 33.902 12.217 29.835 4.072 21.707" fill="none" stroke="none" style="stroke-width: 2;" class="main-fill main-stroke"></polygon>
+      <polygon points="25.757 0 23.042 2.711 31.187 10.839 33.902 8.128" fill="none" stroke="none" style="stroke-width: 2;" class="main-fill main-stroke"></polygon>
+      <polygon points="19.754 6.006 19.241 5.494 20.645 4.091 19.293 2.738 10.507 11.525 11.859 12.877 18.242 6.492 18.753 7.004 5.393 20.316 13.54 28.445 29.83 12.189 21.694 4.072" fill="none" stroke="none" style="stroke-width: 2;" class="main-fill main-stroke"></polygon>
+    </g></g><g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="secondary-fill">
+    
+    
+  </g><g fill="none" transform="translate(18.025 18.025)" stroke="none" class="secondary-fill">
+      <polygon points="0 33.902 12.217 29.835 4.072 21.707" fill="none" stroke="none" class="secondary-fill"></polygon>
+      <polygon points="25.757 0 23.042 2.711 31.187 10.839 33.902 8.128" fill="none" stroke="none" class="secondary-fill"></polygon>
+      <polygon points="19.754 6.006 19.241 5.494 20.645 4.091 19.293 2.738 10.507 11.525 11.859 12.877 18.242 6.492 18.753 7.004 5.393 20.316 13.54 28.445 29.83 12.189 21.694 4.072" fill="none" stroke="none" class="secondary-fill"></polygon>
+    </g></g><style>
+          .main-fill {fill: #2380ff;}
+          .main-stroke {stroke: #2380ff;}
+          .secondary-fill {fill: #f4ffff;}
+          .secondary-stroke {stroke: #f4ffff;}
+
+          .main-fill--darken {fill: #005ad5;}
+          .main-stroke--darken {stroke: #005ad5;}
+          .secondary-fill--darken {fill: #a7ffff;}
+          .secondary-stroke--darken {stroke: #a7ffff;}
+
+          .main-fill--darkener {fill: #0045a2;}
+          .main-stroke--darkener {stroke: #0045a2;}
+          .secondary-fill--darkener {fill: #74ffff;}
+          .secondary-stroke--darkener {stroke: #74ffff;}
+        </style></svg>

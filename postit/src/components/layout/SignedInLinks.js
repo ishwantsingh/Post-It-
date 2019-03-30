@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+import penSvg from "../../images/pen.svg";
+
 const StyledDIv = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,8 +50,21 @@ const StyledBarDiv = styled.div`
       margin: 0;
       padding: 0 0 15px 0;
       text-align: center;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      span {
+        padding: 5px 5px 0 0;
+        margin-bottom: 0px;
+      }
     }
   }
+`;
+const StyledPenSvg = styled.img`
+  margin: 0px 0 0 0;
+  height: 40px;
+  width: 40px;
 `;
 
 function SignedInLinks() {
@@ -57,7 +72,10 @@ function SignedInLinks() {
     <StyledDIv>
       <StyledBarDiv>
         <NavLink to="/create" className="btn create">
-          <h4>+</h4>
+          <h4>
+            <StyledPenSvg src={penSvg} alt="pen" />
+            <span> Compose</span>
+          </h4>
         </NavLink>
         {/* <button>Filter</button> */}
       </StyledBarDiv>
