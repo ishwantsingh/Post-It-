@@ -7,7 +7,7 @@ const StyledDIv = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
-  width: 250px;
+  width: 100%;
   nav a {
     color: rgb(80, 139, 207);
   }
@@ -15,16 +15,20 @@ const StyledDIv = styled.div`
     margin-top: 0;
     margin-bottom: 0;
     text-align: left;
+    font-size: 0.9em;
   }
   a {
     margin-top: 0;
     margin-bottom: 0;
     width: 100%;
-    padding: 8px 10%;
+    padding: 4% 10%;
   }
 
   h5:active {
     border-left: 5px solid rgb(80, 139, 207);
+  }
+  .btn {
+    width: 100%;
   }
 `;
 

@@ -8,22 +8,24 @@ import { logout } from "../../state/actionCreators/authAction";
 const StyledHeadDiv = styled.div`
   display: flex;
   align-items: center;
-  width: 30rem;
+  width: 20%;
+  height: 100%;
   justify-content: flex-end;
-  margin: 20px 100px 0 0;
+  margin: 0 3% 0 0;
   a {
     margin-top: 0 !important;
   }
 `;
 
 const StyledUserImg = styled.img`
+  margin-top: 7px;
   border-radius: 50%;
   height: 45px;
   width: 45px;
 `;
 
 const StyledLogoutBut = styled.button`
-  width: 100px;
+  width: 30%;
 `;
 
 function SignedInHeadbarLinks(props) {

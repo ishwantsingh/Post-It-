@@ -5,7 +5,7 @@ import styled from "styled-components";
 import SignedInLinks from "./SignedInLinks";
 
 const StyledNavbar = styled.div`
-  width: 15%;
+  width: 16%;
   margin: 3px 1.7% 0 0;
 `;
 
