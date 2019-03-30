@@ -4,8 +4,9 @@ import { Redirect } from "react-router-dom";
 
 const StyledImg = styled.img`
   border-radius: 3%;
-  width: 70px;
-  height: 70px;
+  width: 55px;
+  height: 55px;
+  margin-left: 10px;
 `;
 const StyledDiv = styled.div`
   width: 100%;
