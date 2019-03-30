@@ -9,7 +9,10 @@ import orderedPost from "../postFunctions/orderedPost";
 const StyledContainer = styled.div`
   width: 100%;
   h1 {
-    margin: 0 auto;
+    text-align: left;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 0 5px;
   }
 `;
 const AnnouncementList = props => {

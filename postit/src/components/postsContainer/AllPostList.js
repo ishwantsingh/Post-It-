@@ -6,8 +6,12 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   width: 100%;
+
   h1 {
-    margin: 0 auto;
+    text-align: left;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 0 5px;
   }
 `;
 

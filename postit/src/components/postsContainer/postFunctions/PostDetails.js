@@ -14,6 +14,23 @@ const StyledProfileImg = styled.img`
 
 const StyledContainer = styled.div`
   width: 100%;
+  text-align: left;
+  .content {
+    padding: 20px 0 40px 5px;
+  }
+  .title {
+    font-weight: bold;
+  }
+`;
+const StyledDetailsDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const StyledUserDiv = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const PostDetails = props => {
@@ -22,21 +39,24 @@ const PostDetails = props => {
     return (
       <StyledContainer className="section post-details">
         <div className="card z-depth-0">
-          <div className="card-content">
-            <span className="card-title">{post.type}</span>
-            <p>{post.content}</p>
+          <div className="card-content content">
+            {/* <span className="card-title">{post.type}</span> */}
+            <p>
+              <span className="card-title title">{post.type}:</span>
+              {post.content}
+            </p>
           </div>
-          <div className="card-action grey lighten-4 grey-text details-div">
-            <div className="user">
+          <StyledDetailsDiv className="card-action grey lighten-4 grey-text">
+            <StyledUserDiv>
               <StyledProfileImg src={props.post.avatarUrl} alt="profile pic" />
               <span>{props.post.displayName}</span>
-            </div>
+            </StyledUserDiv>
             <div>
               <span>Upvotes: {props.post.upvotes} </span>
               <span> Downvotes: {props.post.downvotes}</span>
             </div>
             <div>{moment(post.createdAt.toDate()).calendar()}</div>
-          </div>
+          </StyledDetailsDiv>
         </div>
       </StyledContainer>
     );

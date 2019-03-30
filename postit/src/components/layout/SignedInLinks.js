@@ -26,26 +26,37 @@ const StyledDIv = styled.div`
     border-left: 5px solid rgb(80, 139, 207);
   }
 `;
-const StyledI = styled.i`
+const StyledI = styled.button`
+  width: 30%;
   background-color: rgb(80, 139, 207);
   text-align: center;
 `;
 const StyledBarDiv = styled.div`
   display: flex;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-bottom: 8px;
+  .create {
+    width: 100%;
+    background-color: rgb(80, 139, 207);
+    padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h4 {
+      margin: 0;
+      padding: 0 0 15px 0;
+      text-align: center;
+    }
+  }
 `;
 
 function SignedInLinks() {
   return (
     <StyledDIv>
       <StyledBarDiv>
-        <NavLink
-          to="/create"
-          className="btn-floating btn-large waves-effect waves-light "
-        >
-          <StyledI className="material-icons">+</StyledI>
+        <NavLink to="/create" className="btn create">
+          <h4>+</h4>
         </NavLink>
         {/* <button>Filter</button> */}
       </StyledBarDiv>

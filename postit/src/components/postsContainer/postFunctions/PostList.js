@@ -32,6 +32,7 @@ const UserDiv = styled.div`
   text-align: left;
   display: flex;
   align-items: center;
+  color: black;
 `;
 
 const StyledProfileImg = styled.img`
@@ -47,6 +48,7 @@ const StyledVotesContainer = styled.div`
   align-items: center;
   flex-grow: 1;
   text-align: center;
+  color: black;
 `;
 const StyledVotesDiv = styled.div`
   display: flex;
@@ -57,6 +59,7 @@ const Number = styled.div`
 `;
 const StyledPostType = styled.div`
   width: 270px;
+  color: black;
 `;
 const StyledDate = styled.div`
   flex-grow: 1;
@@ -73,31 +76,32 @@ const PostList = props => {
         <div>
           <PostSummary post={props.post} />
         </div>
+
+        <StyledListDetails>
+          <UserDiv>
+            <StyledProfileImg src={props.post.avatarUrl} alt="profile pic" />
+            <span>{props.post.displayName}</span>
+          </UserDiv>
+          <StyledVotesContainer>
+            <StyledVotesDiv>
+              <UpvotePost postId={props.post.id} />
+              <Number>{props.post.upvotes}</Number>
+            </StyledVotesDiv>
+            <StyledVotesDiv>
+              <DownvotePost postId={props.post.id} />
+              <Number>{props.post.downvotes}</Number>
+            </StyledVotesDiv>
+          </StyledVotesContainer>
+          <StyledPostType>
+            <span>{props.post.type}</span>
+          </StyledPostType>
+          <StyledDate>
+            <p className="grey-text">
+              {moment(props.post.createdAt.toDate()).format("l")}
+            </p>
+          </StyledDate>
+        </StyledListDetails>
       </Link>
-      <StyledListDetails>
-        <UserDiv>
-          <StyledProfileImg src={props.post.avatarUrl} alt="profile pic" />
-          <span>{props.post.displayName}</span>
-        </UserDiv>
-        <StyledVotesContainer>
-          <StyledVotesDiv>
-            <UpvotePost postId={props.post.id} />
-            <Number>{props.post.upvotes}</Number>
-          </StyledVotesDiv>
-          <StyledVotesDiv>
-            <DownvotePost postId={props.post.id} />
-            <Number>{props.post.downvotes}</Number>
-          </StyledVotesDiv>
-        </StyledVotesContainer>
-        <StyledPostType>
-          <span>{props.post.type}</span>
-        </StyledPostType>
-        <StyledDate>
-          <p className="grey-text">
-            {moment(props.post.createdAt.toDate()).format("l")}
-          </p>
-        </StyledDate>
-      </StyledListDetails>
     </StyledListDiv>
   );
 };
