@@ -124,6 +124,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
     posts: state.firestore.ordered.posts,
     auth: state.firebase.auth
@@ -132,5 +133,5 @@ const mapStateToProps = state => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "posts", orderBy: ["createdAt", "desc"] }])
+  firestoreConnect([{ collection: "posts", orderBy: ["upvotes", "desc"] }])
 )(App);

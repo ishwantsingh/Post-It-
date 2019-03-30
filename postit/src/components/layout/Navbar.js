@@ -6,7 +6,7 @@ import SignedInLinks from "./SignedInLinks";
 
 const StyledNavbar = styled.div`
   width: 15%;
-  margin: 74px 1% 0 0;
+  margin: 15px 2% 0 0;
 `;
 
 const Navbar = props => {

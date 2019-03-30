@@ -24,7 +24,7 @@ const StyledListDetails = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  margin: 0 auto 10px auto;
+  margin: 35px auto 10px auto;
   padding-top: 0px;
 `;
 const UserDiv = styled.div`

@@ -9,8 +9,11 @@ import SignedInHeadbarLinks from "./SignedInHeadbarLinks";
 const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   a {
     margin-top: 20px;
+    margin-right: 30px;
+    margin-left: 70px;
   }
 `;
 
