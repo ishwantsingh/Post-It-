@@ -26,6 +26,11 @@ const StyledUserImg = styled.img`
 
 const StyledLogoutBut = styled.button`
   width: 30%;
+  background-color: white;
+  color: rgb(80, 139, 207);
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.9rem;
 `;
 
 function SignedInHeadbarLinks(props) {

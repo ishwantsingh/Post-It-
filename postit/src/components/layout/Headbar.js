@@ -10,12 +10,14 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 15px auto;
+  margin-bottom: 15px;
+  background-color: rgb(80, 139, 207);
   a {
     margin-right: 3%;
     margin-left: 5.8%;
   }
   .logo {
+    color: white;
     font-size: 2rem;
     font-weight: bold;
   }

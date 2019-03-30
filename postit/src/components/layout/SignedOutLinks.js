@@ -10,13 +10,24 @@ const StyledOutNav = styled.div`
   justify-content: flex-start;
   text-align: left;
 `;
+const StyledLoginBut = styled.button`
+  width: 100px;
+  margin-right: 30px;
+  background-color: white;
+  color: rgb(80, 139, 207);
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display-flex;
+  align-items: center;
+`;
 function SignedOutLinks(props) {
   return (
     <StyledOutNav>
       <h5>
-        <button onClick={props.login} className="waves-effect btn">
+        <StyledLoginBut onClick={props.login} className="waves-effect btn">
           LOGIN
-        </button>
+        </StyledLoginBut>
       </h5>
     </StyledOutNav>
   );

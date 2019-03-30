@@ -5,6 +5,9 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   width: 100%;
+  .btn {
+    background-color: rgb(80, 139, 207);
+  }
 `;
 class CreatePost extends Component {
   state = {
@@ -42,7 +45,7 @@ class CreatePost extends Component {
             <label htmlFor="content">Project Content</label>
           </div>
           <div className="input-field">
-            <button className="btn pink lighten-1">Create</button>
+            <button className="btn lighten-1">Create</button>
           </div>
         </form>
       </StyledContainer>
