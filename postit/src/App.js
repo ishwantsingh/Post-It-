@@ -133,5 +133,5 @@ const mapStateToProps = state => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([{ collection: "posts", orderBy: ["upvotes", "desc"] }])
+  firestoreConnect([{ collection: "posts", orderBy: ["createdAt", "desc"] }])
 )(App);
