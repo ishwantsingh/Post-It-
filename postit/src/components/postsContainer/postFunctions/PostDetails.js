@@ -41,10 +41,10 @@ const PostDetails = props => {
         <div className="card z-depth-0">
           <div className="card-content content">
             {/* <span className="card-title">{post.type}</span> */}
-            <p>
+            <div>
               <span className="card-title title">{post.type}:</span>
               <div className="card-panel"> {post.content}</div>
-            </p>
+            </div>
           </div>
           <StyledDetailsDiv className="card-action grey lighten-4 grey-text">
             <StyledUserDiv>
