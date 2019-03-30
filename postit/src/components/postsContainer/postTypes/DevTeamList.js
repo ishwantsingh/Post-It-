@@ -4,6 +4,8 @@ import PostList from "../postFunctions/PostList";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 
+import orderedPost from "../postFunctions/orderedPost";
+
 const StyledContainer = styled.div`
   width: 100%;
   h1 {
@@ -22,7 +24,7 @@ const DevTeamList = props => {
     return (
       <StyledContainer>
         <h1>Dev Team Post!</h1>
-        {props.posts && props.posts.map(post => filterByType(post))}
+        {orderedPost(props.posts, filterByType)}
       </StyledContainer>
     );
   else {

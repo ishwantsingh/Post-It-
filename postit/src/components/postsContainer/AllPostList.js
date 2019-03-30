@@ -13,14 +13,30 @@ const StyledContainer = styled.div`
 
 const AllPostList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;
+  function compare(a, b) {
+    if (a.upvotes > b.upvotes) return -1;
+    if (a.upvotes < b.upvotes) return 1;
+    return 0;
+  }
+  function myFunction2(posts) {
+    let orderedPost = posts.sort(compare);
+    console.log("working", orderedPost);
+    return (
+      orderedPost &&
+      orderedPost.map(post => {
+        return <PostList post={post} key={post.id} />;
+      })
+    );
+  }
   if (props.posts) {
     return (
       <StyledContainer>
         <h1>All Posts</h1>
-        {props.posts &&
+        {/* {props.posts &&
           props.posts.map(post => {
             return <PostList post={post} key={post.id} />;
-          })}
+          })} */}
+        {myFunction2(props.posts)}
       </StyledContainer>
     );
   } else {

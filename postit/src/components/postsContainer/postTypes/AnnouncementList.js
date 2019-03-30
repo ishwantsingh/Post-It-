@@ -14,22 +14,6 @@ const StyledContainer = styled.div`
 `;
 const AnnouncementList = props => {
   if (!props.auth.uid) return <Redirect to="/login" />;
-  // function compare(a, b) {
-  //   if (a.upvotes > b.upvotes) return -1;
-  //   if (a.upvotes < b.upvotes) return 1;
-  //   return 0;
-  // }
-  // function myFunction2(posts) {
-  //   console.log(props);
-  //   let orderedPost = posts.sort(compare);
-  //   console.log(orderedPost);
-  //   return (
-  //     orderedPost &&
-  //     orderedPost.map(post => {
-  //       return filterByType(post);
-  //     })
-  //   );
-  // }
 
   function filterByType(post) {
     if (post.type === "Announcement") {
@@ -42,7 +26,6 @@ const AnnouncementList = props => {
     return (
       <StyledContainer>
         <h1>Announcements!</h1>
-        {/* {props.posts && props.posts.map(post => filterByType(post))} */}
         {orderedPost(props.posts, filterByType)}
       </StyledContainer>
     );

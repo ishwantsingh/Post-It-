@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 
+import orderedPost from "../postFunctions/orderedPost";
+
 const StyledContainer = styled.div`
   width: 100%;
   h1 {
@@ -22,7 +24,7 @@ const ProductManagerList = props => {
     return (
       <StyledContainer>
         <h1>Product Manager Post!</h1>
-        {props.posts && props.posts.map(post => filterByType(post))}
+        {orderedPost(props.posts, filterByType)}
       </StyledContainer>
     );
   else {
