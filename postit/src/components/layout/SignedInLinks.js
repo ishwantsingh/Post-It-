@@ -22,15 +22,12 @@ const StyledDIv = styled.div`
     width: 100%;
     padding: 8px 10%;
   }
+
   h5:active {
     border-left: 5px solid rgb(80, 139, 207);
   }
 `;
-const StyledI = styled.button`
-  width: 30%;
-  background-color: rgb(80, 139, 207);
-  text-align: center;
-`;
+
 const StyledBarDiv = styled.div`
   display: flex;
   align-items: flex-start;

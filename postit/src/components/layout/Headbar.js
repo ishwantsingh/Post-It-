@@ -11,9 +11,12 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   a {
-    margin-top: 20px;
-    margin-right: 30px;
-    margin-left: 70px;
+    margin-right: 3%;
+    margin-left: 7%;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
   }
 `;
 
@@ -26,7 +29,9 @@ const Headbar = props => {
   );
   return (
     <StyledDiv>
-      <Link to="/">POST IT!</Link>
+      <Link to="/" className="logo">
+        POST-IT
+      </Link>
       {links}
     </StyledDiv>
   );
