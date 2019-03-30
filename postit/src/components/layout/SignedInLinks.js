@@ -3,6 +3,13 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import penSvg from "../../images/pen.svg";
+import postsSvg from "../../images/posts.svg";
+import marketingSvg from "../../images/marketing.svg";
+import productSvg from "../../images/product.svg";
+import designSvg from "../../images/design.svg";
+import laptopSvg from "../../images/laptop.svg";
+import announcementSvg from "../../images/announcement.svg";
+import hrSvg from "../../images/hr.svg";
 
 const StyledDIv = styled.div`
   display: flex;
@@ -10,19 +17,32 @@ const StyledDIv = styled.div`
   justify-content: flex-start;
   text-align: left;
   width: 100%;
+  a:active {
+    margin: 0 auto;
+  }
   nav a {
     color: rgb(80, 139, 207);
   }
   h5 {
+    .but-div {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
     margin-top: 0;
     margin-bottom: 0;
     text-align: left;
     font-size: 0.9em;
+    span {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin-bottom: 10px;
+    }
   }
   a {
     margin-top: 0;
     margin-bottom: 0;
-    width: 100%;
     padding: 4% 10%;
   }
 
@@ -62,11 +82,26 @@ const StyledBarDiv = styled.div`
   }
 `;
 const StyledPenSvg = styled.img`
-  margin: 0px 0 0 0;
+  margin: 0;
   height: 40px;
   width: 40px;
 `;
-
+const StyledSvg = styled.img`
+  margin: 0 0 -13px 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+`;
+const StyledPostSvg = styled.img`
+  height: 35px;
+  width: 35px;
+  margin-bottom: 2px;
+`;
+const StyledPostSpan = styled.span`
+  height: 45px;
+  margin-bottom: 12px;
+  margin-left: 5px;
+`;
 function SignedInLinks() {
   return (
     <StyledDIv>
@@ -80,25 +115,46 @@ function SignedInLinks() {
         {/* <button>Filter</button> */}
       </StyledBarDiv>
       <h5 className="waves-effect white btn">
-        <NavLink to="/">All Posts</NavLink>
+        <NavLink to="/" className="but-div">
+          <StyledPostSvg src={postsSvg} alt="posts" />
+          <StyledPostSpan> All Posts</StyledPostSpan>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/announcements">Announcements</NavLink>
+        <NavLink to="/announcements">
+          <StyledSvg src={announcementSvg} alt="Announcements" />
+          <span>Announcements</span>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/devteam">Dev Team</NavLink>
+        <NavLink to="/devteam">
+          <StyledSvg src={laptopSvg} alt="Dev Team" />
+          <span>Dev Team</span>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/desteam">Design Team</NavLink>
+        <NavLink to="/desteam">
+          <StyledSvg src={designSvg} alt="Design Team" />
+          <span>Design Team</span>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/marketing">Marketing</NavLink>
+        <NavLink to="/marketing">
+          <StyledSvg src={marketingSvg} alt="Marketing" />
+          <span>Marketing</span>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/hr">HR</NavLink>
+        <NavLink to="/hr">
+          <StyledSvg src={hrSvg} alt="HR" />
+          <span>HR</span>
+        </NavLink>
       </h5>
       <h5 className="waves-effect white btn">
-        <NavLink to="/productmanager">Product Managers</NavLink>
+        <NavLink to="/productmanager">
+          <StyledSvg src={productSvg} alt="Product Managers" />
+          <span>Product Managers</span>
+        </NavLink>
       </h5>
     </StyledDIv>
   );
