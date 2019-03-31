@@ -11,6 +11,7 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  height: 53px;
   background-color: rgb(80, 139, 207);
   a {
     margin-right: 3%;
@@ -18,8 +19,9 @@ const StyledDiv = styled.div`
   }
   .logo {
     color: white;
-    font-size: 2rem;
+    font-size: 1.78rem;
     font-weight: bold;
+    margin-bottom: 5px;
   }
 `;
 

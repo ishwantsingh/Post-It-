@@ -12,41 +12,41 @@ const StyledOutNav = styled.div`
   text-align: left;
 `;
 const StyledLoginBut = styled.button`
-  width: 115px;
+  width: 215px;
   margin-right: 30px;
   background-color: white;
   color: rgb(80, 139, 207);
   border-radius: 3px;
   font-weight: bold;
   font-size: 0.9rem;
-  display-flex;
-  align-items: center;
-  justify-content: left;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  margin-bottom: 3px;
   span {
     width: 100%;
     position: absolute;
-    left: 9%;
-    padding-right: 110px;
+    left: 5%;
+    top: 0%;
+    padding-right: 0px;
   }
 `;
 const StyledSvg = styled.img`
+  position: absolute !important;
+  left: -18%;
+  top: -12%;
   margin-left: 40px;
   padding: 0px;
   text-align: left;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
 `;
 function SignedOutLinks(props) {
   return (
     <StyledOutNav>
-      <h5>
+      <div>
         <StyledLoginBut onClick={props.login} className="waves-effect btn">
           <StyledSvg src={googleSvg} alt="google" />
-          <span>LOGIN </span>
+          <span>Sign in with Google</span>
         </StyledLoginBut>
-      </h5>
+      </div>
     </StyledOutNav>
   );
 }

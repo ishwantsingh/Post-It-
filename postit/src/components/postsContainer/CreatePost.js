@@ -4,7 +4,8 @@ import createPost from "../../state/actionCreators/postAction";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  width: 100%;
+  width: 70%;
+  padding-top: 0px;
   .btn {
     background-color: rgb(80, 139, 207);
   }
@@ -29,7 +30,7 @@ class CreatePost extends Component {
   };
   render() {
     return (
-      <StyledContainer>
+      <StyledContainer className="container card-panel">
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Create a New Post</h5>
           <div className="input-field">
