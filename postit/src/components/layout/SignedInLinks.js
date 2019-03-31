@@ -23,12 +23,19 @@ const StyledDIv = styled.div`
   nav a {
     color: rgb(80, 139, 207);
   }
+  div .but-div {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    margin: -8px 0 0px -20px;
+  }
   h5 {
     .but-div {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
     }
+
     margin-top: 0;
     margin-bottom: 0;
     text-align: left;
@@ -114,48 +121,48 @@ function SignedInLinks() {
         </NavLink>
         {/* <button>Filter</button> */}
       </StyledBarDiv>
-      <h5 className="waves-effect white btn">
+      <div className="waves-effect white btn">
         <NavLink to="/" className="but-div">
           <StyledPostSvg src={postsSvg} alt="posts" />
           <StyledPostSpan> All Posts</StyledPostSpan>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/announcements">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/announcements" className="but-div">
           <StyledSvg src={announcementSvg} alt="Announcements" />
           <span>Announcements</span>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/devteam">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/devteam" className="but-div">
           <StyledSvg src={laptopSvg} alt="Dev Team" />
           <span>Dev Team</span>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/desteam">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/desteam" className="but-div">
           <StyledSvg src={designSvg} alt="Design Team" />
           <span>Design Team</span>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/marketing">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/marketing" className="but-div">
           <StyledSvg src={marketingSvg} alt="Marketing" />
           <span>Marketing</span>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/hr">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/hr" className="but-div">
           <StyledSvg src={hrSvg} alt="HR" />
           <span>HR</span>
         </NavLink>
-      </h5>
-      <h5 className="waves-effect white btn">
-        <NavLink to="/productmanager">
+      </div>
+      <div className="waves-effect white btn">
+        <NavLink to="/productmanager" className="but-div">
           <StyledSvg src={productSvg} alt="Product Managers" />
           <span>Product Managers</span>
         </NavLink>
-      </h5>
+      </div>
     </StyledDIv>
   );
 }

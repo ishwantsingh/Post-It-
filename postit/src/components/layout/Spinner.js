@@ -10,7 +10,7 @@ const StyledSpinner = styled.div`
   .children {
     display: ${props => (props.spinnerOn ? "none" : "block")};
   }
-  margin: 0 11% 0 0;
+  margin: 0 16.5% 0 0;
 `;
 
 export function Spinner(props) {
