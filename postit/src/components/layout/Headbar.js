@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
   }
   .logo {
     color: white;
-    font-size: 1.78rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 5px;
   }

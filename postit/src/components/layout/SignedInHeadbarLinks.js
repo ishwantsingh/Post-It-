@@ -11,7 +11,7 @@ const StyledHeadDiv = styled.div`
   width: 20%;
   height: 100%;
   justify-content: flex-end;
-  margin: 0 3% 0 0;
+  margin: 0 3% 3px 0;
   a {
     margin-top: 0 !important;
   }

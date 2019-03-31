@@ -17,7 +17,7 @@ export function Spinner(props) {
   console.log(props);
   return (
     <StyledSpinner spinnerOn={props.spinner}>
-      <div className="spinner">Please Wait...</div>
+      <h3 className="spinner">Please Wait...</h3>
       <div className="children">{props.children}</div>
     </StyledSpinner>
   );

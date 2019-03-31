@@ -4,7 +4,7 @@ import createPost from "../../state/actionCreators/postAction";
 import styled from "styled-components";
 
 const StyledContainer = styled.div`
-  width: 70%;
+  width: 60%;
   padding-top: 0px;
   .btn {
     background-color: rgb(80, 139, 207);
@@ -33,6 +33,17 @@ class CreatePost extends Component {
       <StyledContainer className="container card-panel">
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Create a New Post</h5>
+          <br />
+          <br />
+
+          <div className="input-field">
+            <textarea
+              id="content"
+              className="materialize-textarea"
+              onChange={this.handleChange}
+            />
+            <label htmlFor="content">Enter Post Content</label>
+          </div>
           <div className="input-field">
             <label htmlFor="type">
               <input
@@ -56,14 +67,8 @@ class CreatePost extends Component {
           <br />
           <br />
           <br />
-          <div className="input-field">
-            <textarea
-              id="content"
-              className="materialize-textarea"
-              onChange={this.handleChange}
-            />
-            <label htmlFor="content">Enter Post Content</label>
-          </div>
+          <br />
+
           <div className="input-field">
             <button className="btn lighten-1">Create</button>
           </div>
