@@ -33,16 +33,35 @@ class CreatePost extends Component {
         <form className="white" onSubmit={this.handleSubmit}>
           <h5 className="grey-text text-darken-3">Create a New Post</h5>
           <div className="input-field">
-            <input type="text" id="type" onChange={this.handleChange} />
-            <label htmlFor="type">Project Type</label>
+            <label htmlFor="type">
+              <input
+                list="types"
+                name="myType"
+                type="text"
+                id="type"
+                placeholder="Select Post Type:"
+                onChange={this.handleChange}
+              />
+            </label>
+            <datalist id="types">
+              <option value="Announcement" />
+              <option value="Dev Team" />
+              <option value="Design Team" />
+              <option value="Marketing" />
+              <option value="HR" />
+              <option value="Product Manager" />
+            </datalist>
           </div>
+          <br />
+          <br />
+          <br />
           <div className="input-field">
             <textarea
               id="content"
               className="materialize-textarea"
               onChange={this.handleChange}
             />
-            <label htmlFor="content">Project Content</label>
+            <label htmlFor="content">Enter Post Content</label>
           </div>
           <div className="input-field">
             <button className="btn lighten-1">Create</button>
