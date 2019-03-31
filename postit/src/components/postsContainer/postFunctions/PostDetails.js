@@ -15,14 +15,17 @@ const StyledProfileImg = styled.img`
 const StyledContainer = styled.div`
   width: 100%;
   text-align: left;
+  margin-top: -28px;
   .content {
-    padding: 20px 0 40px 5px;
+    padding: 0;
   }
   .title {
     font-weight: bold;
+    font-size: 2.3rem;
   }
 `;
 const StyledDetailsDiv = styled.div`
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -39,14 +42,8 @@ const PostDetails = props => {
     return (
       <StyledContainer className="section post-details">
         <div className="card z-depth-0">
-          <div className="card-content content">
-            {/* <span className="card-title">{post.type}</span> */}
-            <div>
-              <span className="card-title title">{post.type}:</span>
-              <div className="card-panel"> {post.content}</div>
-            </div>
-          </div>
-          <StyledDetailsDiv className="card-action grey lighten-4 grey-text">
+          <span className="card-title title">{post.type}:</span>
+          <StyledDetailsDiv className="card-action grey lighten-3 grey-text">
             <StyledUserDiv>
               <StyledProfileImg src={props.post.avatarUrl} alt="profile pic" />
               <span>{props.post.displayName}</span>
@@ -57,6 +54,11 @@ const PostDetails = props => {
             </div>
             <div>{moment(post.createdAt.toDate()).calendar()}</div>
           </StyledDetailsDiv>
+          <div className="card-content content">
+            <div>
+              <div className="card-action grey lighten-4"> {post.content}</div>
+            </div>
+          </div>
         </div>
       </StyledContainer>
     );
