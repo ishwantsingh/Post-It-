@@ -45,3 +45,22 @@ Redux bindings for Firestore. Provides low-level API used in other libraries suc
 ### React-Redux Firebase
 
 Redux bindings for Firebase. Includes Higher Order Component (HOC) for use with React, with Out of the box support for authentication (with auto load user profile).
+
+
+# Guide
+
+## Log In/ Sign Up on the App
+Click on the Log In button to Sign Up/Sign In using your Google Account
+
+## Posts Categories
+Each Post in the App is filtered via the post type into different tabs.
+The 'All Posts' Tab shows all types of posts in one tab.
+The 'Announcement' tab shows all the Announcements made on the web and same goes for other Post-type tabs.
+
+## Create Post
+Click on the Compose button to Create Your Own Post! 
+Choose the Post-type from the drop down menu and Type out the post using the input feild and then click on the creat Button.
+
+### Its That Simple!!!
+
+
