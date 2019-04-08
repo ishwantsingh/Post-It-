@@ -56,6 +56,10 @@ Click on the Log In button to Sign Up/Sign In using your Google Account
 Each Post in the App is filtered via the post type into different tabs.
 The 'All Posts' Tab shows all types of posts in one tab.
 The 'Announcement' tab shows all the Announcements made on the web and same goes for other Post-type tabs.
+Click on anyone of the posts to visit the Post-Details page and see the complete content of the post.
+
+## Upvote or Downvote Posts
+Click on the upvote or downvote button on the post to upvote or downvote it. The post with highest difference between upvotes and downvotes will be shown on top and the least on the bottom. This is applicable for each Post-type Tab.
 
 ## Create Post
 Click on the Compose button to Create Your Own Post! 
