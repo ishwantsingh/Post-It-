@@ -1,8 +1,11 @@
 # Post-It
 
 Welcome to Post-It Web App!
-
-![Screenshot] (https://github.com/ishwantsingh/Plan-It/blob/master/plan-it/src/Screenshot%20(69).png "Screenshot" )
+ 
+ Screenshot: 
+![alt text][Screenshot]
+ 
+[Screenshot]: https://github.com/ishwantsingh/Plan-It/blob/master/plan-it/src/Screenshot%20(69).png "Screenshot"
 
 # Tech-Stack
 
