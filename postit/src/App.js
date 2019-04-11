@@ -106,14 +106,7 @@ class App extends Component {
                   render={props => <User {...props} auth={auth} />}
                 />
 
-                <Route
-                  path="/login"
-                  render={() => (
-                    <Spinner>
-                      <Login />
-                    </Spinner>
-                  )}
-                />
+                <Route path="/login" render={() => <Login />} />
               </Switch>
             </StyledAppDataDiv>
           </StyledAppDataContainer>
