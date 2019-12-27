@@ -97,7 +97,7 @@ const PostList = props => {
           </StyledPostType>
           <StyledDate>
             <p className="grey-text">
-              {moment(props.post.createdAt.toDate()).format("l")}
+              {moment(props.post.createdAt).format("l")}
             </p>
           </StyledDate>
         </StyledListDetails>

@@ -8,7 +8,7 @@ import upvoteimgGrey from "../../../images/arrow-down-1.svg";
 import upvoteimgBlack from "../../../images/arrow-down-2.svg";
 
 const StyledImg = styled.img`
-  height: 50px;
+  height: 45px;
   width: 50px;
 `;
 

@@ -52,7 +52,7 @@ const PostDetails = props => {
               <span>Upvotes: {props.post.upvotes} </span>
               <span> Downvotes: {props.post.downvotes}</span>
             </div>
-            <div>{moment(post.createdAt.toDate()).calendar()}</div>
+            <div>{moment(post.createdAt).calendar()}</div>
           </StyledDetailsDiv>
           <div className="card-content content">
             <div>
